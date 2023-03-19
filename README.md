@@ -25,13 +25,6 @@ Entre outras funcionalidades
 
 [![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Alexis Mariz - Tester](https://github.com/Adgmariz)
 
-## Usado por
-
-Este projeto é
-
-- Empresa 1
-- Empresa 2
-
 ## Instalação
 
 Primeiro, clone o repositório
