@@ -2,9 +2,9 @@
 
 _Projeto usado na disciplina de Praticas em desenvolvimento de software_.
 
-_Projeto que serve de referência para o desenvolvimento de software em Java_.
+_Projeto com objetivo de ajudar o usuário a acompanhar a sua rotina de treinos na academia. _.
 
-Este é um aplicativo feito em React Native, Node.js, utilizando Typescript, e Mongo DB para banco de dados, com objetivo de ajudar o usuário a acompanhar a sua rotina de treinos na academia.
+Este é um aplicativo feito em React Native, Node.js, utilizando Typescript, e Mongo DB para banco de dados.
 
 O usuário terá a opção de:
 
