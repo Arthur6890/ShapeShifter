@@ -61,29 +61,30 @@ Para usar o Expo CLI, você precisa ter as seguintes ferramentas instaladas em s
 
 ## Backlog do produto
 
-- Como um usuário, eu quero visualizar e editar minhas informações pessoais (nome, idade, peso, altura, etc.) para manter meu perfil atualizado.
+1 - Como um usuário, eu quero me cadastrar no aplicativo
 
-- Como um usuário, eu quero visualizar meu histórico de treinos para acompanhar meu progresso ao longo do tempo.
+2 - Como um usuário, eu quero logar no aplicativo, visualizar e editar minhas informações pessoais (nome, idade, peso, altura, etc.) para manter meu perfil atualizado. 
 
-- Como um usuário, eu quero visualizar os detalhes do meu treino atual, incluindo exercícios, séries, repetições e carga, para que eu saiba o que fazer durante o treino.
+3 - Como um usuário, eu quero visualizar meu histórico de treinos para acompanhar meu progresso ao longo do tempo.
 
-- Como um usuário, eu quero marcar os exercícios concluídos durante o treino para acompanhar meu progresso.
+4 - Como um usuário, eu quero visualizar os detalhes do meu treino atual, incluindo exercícios, séries, repetições e carga, para que eu saiba o que fazer durante o treino.
 
-- Como um usuário, eu quero receber notificações e lembretes sobre os horários agendados, alterações no meu treino e outras informações relevantes para me manter informado e motivado.
+5 - Como um usuário, eu quero marcar os exercícios concluídos durante o treino para acompanhar meu progresso.
 
-- Como um usuário, eu quero sincronizar meu smartwatch com o sistema para que eu possa registrar automaticamente informações de treino, como frequência cardíaca, calorias queimadas e tempo de atividade.
+6 - Como um usuário, eu quero sincronizar meu smartwatch com o sistema para que eu possa registrar automaticamente informações de treino, como frequência cardíaca, calorias queimadas e tempo de atividade.
 
-- Como um usuário, eu quero acessar uma biblioteca de vídeos e tutoriais sobre exercícios, nutrição e outras informações relevantes para melhorar meu conhecimento e habilidades.
+7 - Como um usuário, eu quero acessar uma biblioteca de vídeos e tutoriais sobre exercícios, nutrição e outras informações relevantes para melhorar meu conhecimento e habilidades.
 
-- Como um usuário, eu quero ver um feed com as postagens recentes dos usuários que sigo para me manter atualizado sobre seu progresso, fotos e dicas de fitness.
+8 - Como um usuário, eu quero ver um feed com as postagens recentes dos usuários que sigo para me manter atualizado sobre seu progresso, fotos e dicas de fitness.
 
-- Como um usuário, eu quero publicar atualizações de status, fotos e vídeos no meu feed para compartilhar meu progresso e experiências com os outros.
+9 - Como um usuário, eu quero publicar atualizações de status, fotos e vídeos no meu feed para compartilhar meu progresso e experiências com os outros. 
 
-- Como um usuário, eu quero interagir com as postagens no feed, curtindo, comentando e compartilhando, para me conectar e apoiar outros usuários.
+10 - Como um usuário, eu quero interagir com as postagens no feed, curtindo, comentando e compartilhando, para me conectar e apoiar outros usuários.
 
+11 - Como um usuário, eu quero receber notificações e lembretes sobre os horários agendados, alterações no meu treino e outras informações relevantes para me manter informado e motivado.
 
-- Como um instrutor, eu quero criar, editar e deletar treinos personalizados para meus alunos, selecionando exercícios, séries, repetições e carga.
+12 - Como um instrutor, eu quero criar, editar e deletar treinos personalizados para meus alunos, selecionando exercícios, séries, repetições e carga.
 
-- Como um instrutor, eu quero visualizar e analisar o progresso dos meus alunos para ajustar seus treinos e garantir que estejam alcançando seus objetivos.
+13 - Como um instrutor, eu quero visualizar e analisar o progresso dos meus alunos para ajustar seus treinos e garantir que estejam alcançando seus objetivos.
 
-- Como um instrutor, eu quero criar, editar e deletar a biblioteca com treinos, vídeos e dicas.
+14 - Como um instrutor, eu quero criar, editar e deletar a biblioteca com treinos, vídeos e dicas.
