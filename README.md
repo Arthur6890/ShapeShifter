@@ -23,7 +23,7 @@ Entre outras funcionalidades
 
 [![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Lucas Jacone - Banco de Dados](https://github.com/jackjacone)
 
-[![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Alexis Mariz - Tester](https://github.com/Adgmariz)
+[![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Alexis Mariz - Dev Fullstack](https://github.com/Adgmariz)
 
 ## Instalação
 
