@@ -88,3 +88,15 @@ Para usar o Expo CLI, você precisa ter as seguintes ferramentas instaladas em s
 13 - Como um instrutor, eu quero visualizar e analisar o progresso dos meus alunos para ajustar seus treinos e garantir que estejam alcançando seus objetivos.
 
 14 - Como um instrutor, eu quero criar, editar e deletar a biblioteca com treinos, vídeos e dicas.
+
+## Backlog do sprint
+
+1 - Como um usuário, eu quero me cadastrar no aplicativo.
+
+2 - Como um usuário, eu quero logar no aplicativo, visualizar e editar minhas informações pessoais para manter meu perfil atualizado.
+
+3 - Como um usuário, eu quero visualizar meu histórico de treinos para acompanhar meu progresso ao longo do tempo.
+
+4 - Como um usuário, eu quero visualizar os detalhes do meu treino atual, incluindo exercícios, séries, repetições e carga, para que eu saiba o que fazer durante o treino.
+
+5 - Como um usuário, eu quero marcar os exercícios concluídos durante o treino para acompanhar meu progresso.
