@@ -91,7 +91,7 @@ Para usar o Expo CLI, você precisa ter as seguintes ferramentas instaladas em s
 
 ## Backlog do sprint
 
-1 - Como um usuário, eu quero me cadastrar no aplicativo.
+### 1 - Como um usuário, eu quero me cadastrar no aplicativo.
 -Back End: Criar a lógica de registro de usuários. (Alexis)
 -Back End:Garantir a validação dos dados inseridos e a integração com o banco de dados. (João)
 -Front End: Criar a interface do usuário para o registro de usuários. Isso inclui a criação
