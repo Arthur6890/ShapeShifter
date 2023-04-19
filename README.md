@@ -106,7 +106,7 @@ usuários. (Lucas)
 ### 2 - Como um usuário, eu quero logar no aplicativo, visualizar e editar minhas informações pessoais para manter meu perfil atualizado.
 
 -Back End: Criar a lógica de login do usuário, incluindo a validação de suas credenciais e a criação e gerenciamento de
-uma sessão de usuário segura. (Alexis)
+uma sessão de usuário segura. (João)
 
 -Back End: Criar a lógica para permitir que o usuário visualize e edite suas informações pessoais. (Alexis)
 
