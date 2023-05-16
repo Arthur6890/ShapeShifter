@@ -1,0 +1,19 @@
+{
+  "name": "shapeshifter-backend",
+  "version": "1.0.0",
+  "description": "this is the backend of our project \"Shapeshifter\" presented in the discipline of Practices in Software Development at the Federal University of Minas Gerais",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthur6890/ShapeShifter.git"
+  },
+  "author": "Arthur Ramos, Lucas Jacone, Alexis Mariz, Joao Victor Valgas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arthur6890/ShapeShifter/issues"
+  },
+  "homepage": "https://github.com/Arthur6890/ShapeShifter#readme"
+}
