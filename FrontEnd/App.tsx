@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { LoginScreen } from './src/screens/Login/index';
 import { Routes } from "./src/routes";
 
