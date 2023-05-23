@@ -3,13 +3,13 @@ import { StyleSheet } from "react-native"
 export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "center",
+		justifyContent: "space-around",
 		alignItems: "center",
 	},
 	image: {
 		width: 194,
 		height: 182,
-		marginBottom: 73,
+		// marginBottom: 73,
 	},
 	inputsWrapper: {
 		height: 100,
@@ -25,13 +25,12 @@ export const styles = StyleSheet.create({
 		color: "#ffffff",
 		borderBottomColor: "#ffffff",
 	},
-	button: {
+	loginButton: {
 		justifyContent: "center",
 		alignItems: "center",
 		borderRadius: 15,
 		width: 250,
 		paddingVertical: 19,
-		marginTop: 82,
 		backgroundColor: "#ffffff"
 	},
 	buttonText: {
@@ -40,7 +39,27 @@ export const styles = StyleSheet.create({
 		fontWeight: "600",
 		textTransform: "uppercase",
 		color: "#684369"
+	},
+	forgotPasswordButton: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	forgotPassword: {
+		fontWeight: "600",
+		fontSize: 20,
+		lineHeight: 23,
+		color: "#FFFFFF",
+	},
+	createAccountButton: {
+		display: "flex",
+		// marginBottom: 10,
+	},
+	createAccount: {
+		fontWeight: "600",
+		fontSize: 28,
+		lineHeight: 33,
+		color: "#FFFFFF",
 	}
-
 
 })
