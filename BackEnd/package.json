@@ -4,7 +4,8 @@
   "description": "this is the backend of our project \"Shapeshifter\" presented in the discipline of Practices in Software Development at the Federal University of Minas Gerais",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Arthur6890/ShapeShifter/issues"
   },
-  "homepage": "https://github.com/Arthur6890/ShapeShifter#readme"
+  "homepage": "https://github.com/Arthur6890/ShapeShifter#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
