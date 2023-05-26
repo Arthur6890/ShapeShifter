@@ -29,19 +29,19 @@ Entre outras funcionalidades
 
 Primeiro, clone o repositório
 
-`git clone https://github.com/arthur6890/meu-treino`
+`git clone https://github.com/arthur6890/ShapeShifter`
 
 Depois, instale o projeto com yarn ou npm
 
 ```bash
-  cd meu-treino
+  cd ShapeShifter
   yarn
 ```
 
 ou
 
 ```bash
-  cd meu-treino
+  cd ShapeShifter
   npm install
 ```
 
