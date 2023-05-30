@@ -12,10 +12,12 @@ export class UserController {
   constructor(private userRepository: UserRepository, private sessionManager: SessionManager) {}
   
 
-  async register(id: string, name: string, email: string, password: string): Promise<void> {
+  async register(id: string, userName: string, password: string, email: string, name: string, 
+                goal: string): Promise<void> {
    
     // Validar os dados inseridos
-    if (!id || !name || !email || !password) {
+    if (!id || !userName || !password || !email || !name
+      || !goal) {
       throw new Error('Todos os campos devem ser preenchidos.');
     }
     // Verificar se o email é válido
@@ -29,7 +31,9 @@ export class UserController {
       throw new Error('Já existe um usuário com esse email.');
     }
 
-    const user = new User(id,name, email, password);
+    const trainingFiles: Array<any> = [];
+
+    const user = new User(id, userName, password, email, name, goal,0, 0, trainingFiles);
     await this.userRepository.save(user);
   }
 
