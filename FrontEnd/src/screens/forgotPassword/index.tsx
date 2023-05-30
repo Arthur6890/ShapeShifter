@@ -8,10 +8,10 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../src/routes";
 import { styles } from "./styles";
 
-type homeScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
+type forgotPasswordScreenProp = NativeStackNavigationProp<RootStackParamList, "ForgotPassword">;
 
 export const ForgotPasswordScreen = () => {
-	const navigation = useNavigation<homeScreenProp>();
+	const navigation = useNavigation<forgotPasswordScreenProp>();
 
 	const [userName, setUserName] = useState('');
 	const [password, setPassword] = useState('');

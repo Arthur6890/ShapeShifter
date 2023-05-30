@@ -29,19 +29,19 @@ Entre outras funcionalidades
 
 Primeiro, clone o repositório
 
-`git clone https://github.com/arthur6890/ShapeShifter`
+`git clone https://github.com/arthur6890/meu-treino`
 
 Depois, instale o projeto com yarn ou npm
 
 ```bash
-  cd ShapeShifter
+  cd meu-treino
   yarn
 ```
 
 ou
 
 ```bash
-  cd ShapeShifter
+  cd meu-treino
   npm install
 ```
 
@@ -135,7 +135,7 @@ incluir a criação de tabelas, gráficos ou outros tipos de visualização de d
 
 -Banco de Dados: criar e gerenciar o banco de dados que armazena os dados de treino do usuário. (Lucas)
 
-### 4 - Como um usuário, eu quero visualizar os detalhes do meu treino atual, incluindo exercícios, séries e repetições, para que eu saiba o que fazer durante o treino.
+### 4 - Como um usuário, eu quero visualizar os detalhes do meu treino atual, incluindo exercícios, séries, repetições e carga, para que eu saiba o que fazer durante o treino.
 
 -Back End: criar a lógica para recuperar os detalhes do treino atual do usuário a partir do banco de dados
 e fornecê-los ao Front End para exibição. (Alexis)
