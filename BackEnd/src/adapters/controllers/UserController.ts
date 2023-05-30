@@ -52,4 +52,34 @@ export class UserController {
     }
   }
 
+  async getTrainingHistory(userId: string, filters: any[], sortBy: string): Promise<any[]> {
+    const user = await this.userRepository.findById(userId);
+
+    if (!user) {
+      throw new Error('Usuário não encontrado.');
+    }
+
+    let trainingHistory = user.trainingFiles;
+
+    // Aplicar filtros
+    if (filters.length > 0) {
+      trainingHistory = trainingHistory.filter(training => {
+        return filters.every(filter => {
+          return training[filter.field] === filter.value;
+        });
+      });
+    }
+
+    // Ordenar
+    if (sortBy) {
+      trainingHistory = trainingHistory.sort((a, b) => {
+        if (a[sortBy] < b[sortBy]) return -1;
+        if (a[sortBy] > b[sortBy]) return 1;
+        return 0;
+      });
+    }
+
+    return trainingHistory;
+  }
+
 }
