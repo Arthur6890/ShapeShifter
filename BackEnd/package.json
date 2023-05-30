@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Arthur6890/ShapeShifter#readme",
   "devDependencies": {
+    "@types/node": "^20.2.5",
     "typescript": "^5.0.4"
   },
   "dependencies": {
