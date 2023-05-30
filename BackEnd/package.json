@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Arthur6890/ShapeShifter#readme",
   "devDependencies": {
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
   }
 }

@@ -1,8 +1,15 @@
 import { User } from '../../domain/entities/User';
 import { UserRepository } from '../../ports/UserRepository';
+import { SessionManager } from '../../utils/SessionManager';
+
+export interface LoginResponse {
+  user: User;
+  sessionId: string;
+}
+
 
 export class UserController {
-  constructor(private userRepository: UserRepository) {}
+  constructor(private userRepository: UserRepository, private sessionManager: SessionManager) {}
   
 
   async register(id: string, name: string, email: string, password: string): Promise<void> {
@@ -26,17 +33,19 @@ export class UserController {
     await this.userRepository.save(user);
   }
 
-  async login(email: string, password: string): Promise<User | null> {
+  async login(email: string, password: string): Promise<LoginResponse | null> {
     const user = await this.userRepository.findByEmail(email);
+    
     if (user && user.password === password) {
-      return user;
+      // Cria uma sessão de usuário segura
+      const sessionId = this.sessionManager.createSession(user.id);
+
+      // Retorna o usuário e o ID da sessão
+      return { user, sessionId };
+
     } else {
       return null;
     }
   }
 
-  async getUserById(id: string): Promise<User | null> {
-    const user = await this.userRepository.findById(id);
-    return user;
-  }  
 }
