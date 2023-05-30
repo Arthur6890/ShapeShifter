@@ -1,10 +1,7 @@
-const { MongoClient } = require('mongodb');
-
-const url = 'mongodb://localhost:27017';
-const dbName = 'nome_do_banco_de_dados';
+import { uri, dbName, MongoClient as Mongo } from './MongoDBConnection';
 
 async function createTrainingFilesCollection() {
-  const client = new MongoClient(url);
+  const client = new Mongo(uri);
 
   try {
     await client.connect();
