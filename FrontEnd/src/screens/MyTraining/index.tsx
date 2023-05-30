@@ -10,23 +10,29 @@ import Spacer from '../../components/spacer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles'
+import TruncatedText from '../../components/truncatedText';
 
 type MyTraningScreenProp = NativeStackNavigationProp<RootStackParamList, "MyTraining">;
 
 export const MyTraining = () => {
 	return (
 		<>
-			<SafeAreaView>
-				<Text>
+			<SafeAreaView style={styles.wrapper}>
+				<View style={styles.titlePage}>
+					<TouchableOpacity>
+						<Ionicons name="arrow-back-outline" size={34} color="#830289" />
+					</TouchableOpacity>
+					<Text style={styles.titlePageText} >meu treino</Text>
+				</View>
+				<Spacer height={20} />
+				<Text style={styles.title}>
 					divisões de treino
 				</Text>
-				<View>
-					<Text>
+				<View style={styles.ficha}>
+					<Text style={styles.fichaName}>
 						A
 					</Text>
-					<Text>
-						Abdômen, Peitoral, Dorsal, Pern...
-					</Text>
+					<TruncatedText text='Abdômen, Peitoral, Dorsal, Pernas' maxLength={30} style={styles.fichaExercicios} />
 				</View>
 			</SafeAreaView>
 			<BottomNavigation />

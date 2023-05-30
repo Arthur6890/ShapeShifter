@@ -28,7 +28,7 @@ const BottomNavigation = () => {
 			</TouchableOpacity>
 
 			<TouchableOpacity style={styles.item} onPress={() => navigation.navigate("MyTraining")}>
-				<View style={currentPath === "MyTaining" ? null : styles.opacityView}>
+				<View style={currentPath === "MyTraining" ? null : styles.opacityView}>
 					<Image source={Weight} style={styles.itemIcon} />
 				</View>
 				<Text style={styles.itemText}>meu treino</Text>

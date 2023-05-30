@@ -15,79 +15,81 @@ type ProfileScreenProp = NativeStackNavigationProp<RootStackParamList, "Profile"
 
 export const Profile = () => {
 	return (
-		<SafeAreaView>
-			<ScrollView style={styles.main}>
-				<View style={styles.title}>
-					<TouchableOpacity>
-						<Ionicons name="arrow-back-outline" size={34} color="#830289" />
-					</TouchableOpacity>
-					<Text style={styles.titleText} >perfil</Text>
-				</View>
+		<>
+			<SafeAreaView>
+				<ScrollView style={styles.main}>
+					<View style={styles.title}>
+						<TouchableOpacity>
+							<Ionicons name="arrow-back-outline" size={34} color="#830289" />
+						</TouchableOpacity>
+						<Text style={styles.titleText} >perfil</Text>
+					</View>
 
-				<Spacer height={37} />
+					<Spacer height={37} />
 
-				<Text style={styles.profileName}>Arthur</Text>
+					<Text style={styles.profileName}>Arthur</Text>
 
-				<Spacer height={19} />
+					<Spacer height={19} />
 
-				<Text style={styles.goalTitle}>Objetivo</Text>
+					<Text style={styles.goalTitle}>Objetivo</Text>
 
-				<Text style={styles.goal}>Emagrecer</Text>
+					<Text style={styles.goal}>Emagrecer</Text>
 
-				<Spacer height={17} />
+					<Spacer height={17} />
 
 
-				<View style={styles.item}>
-					<Feather name="play" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Primeiros Passos
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<Feather name="play" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Primeiros Passos
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<Ionicons name="megaphone-outline" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Novidades
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<Ionicons name="megaphone-outline" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Novidades
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<MaterialCommunityIcons name="shield-alert-outline" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Aviso de privacidade
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<MaterialCommunityIcons name="shield-alert-outline" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Aviso de privacidade
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<Ionicons name="md-newspaper-outline" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Termos de uso
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<Ionicons name="md-newspaper-outline" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Termos de uso
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<MaterialCommunityIcons name="shield-check-outline" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Comprovante de vacina
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<MaterialCommunityIcons name="shield-check-outline" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Comprovante de vacina
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<MaterialIcons name="phone-iphone" size={24} color="#830289" />
-					<Text style={styles.itemText}>
-						Fale Conosco
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<MaterialIcons name="phone-iphone" size={24} color="#830289" />
+						<Text style={styles.itemText}>
+							Fale Conosco
+						</Text>
+					</View>
 
-				<View style={styles.item}>
-					<MaterialIcons name="logout" size={24} color="#D00000" />
-					<Text style={styles.itemTextLogout}>
-						Sair
-					</Text>
-				</View>
+					<View style={styles.item}>
+						<MaterialIcons name="logout" size={24} color="#D00000" />
+						<Text style={styles.itemTextLogout}>
+							Sair
+						</Text>
+					</View>
 
-			</ScrollView>
+				</ScrollView>
+			</SafeAreaView>
 			<BottomNavigation />
-		</SafeAreaView>
+		</>
 	)
 }
