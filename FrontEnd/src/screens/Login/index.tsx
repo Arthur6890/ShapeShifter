@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Image, View, TextInput, TouchableOpacity, Text, StatusBar } from "react-native"
 import { LinearGradient } from 'expo-linear-gradient';
 import Logo from "../../assets/images/AppLogo.png"
@@ -6,6 +6,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../src/routes";
+import { MaterialIcons } from '@expo/vector-icons';
+import { UserContext } from '../../context/UserContext';
 import { styles } from "./styles";
 
 type loginScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
@@ -16,10 +18,15 @@ export const LoginScreen = () => {
 	const [userName, setUserName] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleTextChange = (inputText: string) => {
+	const handleUserNameChange = (inputText: string) => {
 		setUserName(inputText);
 	};
 
+	const handlePasswordChange = (inputText: string) => {
+		setPassword(inputText);
+	};
+
+	// const { handleLogin } = useContext(UserContext);
 	const handleLogin = () => {
 		navigation.navigate('Home')
 	};
@@ -34,21 +41,21 @@ export const LoginScreen = () => {
 					<View style={styles.inputView} >
 						<FontAwesome name="user" size={24} color="white" />
 						<TextInput
-							placeholder="User"
+							placeholder="Nome de usuário"
 							placeholderTextColor={"white"}
 							value={userName}
-							onChangeText={handleTextChange}
+							onChangeText={handleUserNameChange}
 							style={styles.input}
 						/>
 					</View>
 
 					<View style={styles.inputView} >
-						<FontAwesome name="user" size={24} color="white" />
+						<MaterialIcons name="lock" size={24} color="white" />
 						<TextInput
-							placeholder="User"
+							placeholder="Senha"
 							placeholderTextColor={"white"}
-							value={userName}
-							onChangeText={handleTextChange}
+							value={password}
+							onChangeText={handlePasswordChange}
 							style={styles.input}
 						/>
 					</View>

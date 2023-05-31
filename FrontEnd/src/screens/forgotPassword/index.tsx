@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../src/routes";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from "./styles";
 
 type forgotPasswordScreenProp = NativeStackNavigationProp<RootStackParamList, "ForgotPassword">;
@@ -14,10 +15,14 @@ export const ForgotPasswordScreen = () => {
 	const navigation = useNavigation<forgotPasswordScreenProp>();
 
 	const [userName, setUserName] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('');
 
 	const handleTextChange = (inputText: string) => {
 		setUserName(inputText);
+	};
+
+	const handleEmailChange = (inputText: string) => {
+		setEmail(inputText);
 	};
 
 	const handleLogin = () => {
@@ -32,7 +37,7 @@ export const ForgotPasswordScreen = () => {
 				<View style={styles.inputView} >
 					<FontAwesome name="user" size={24} color="white" />
 					<TextInput
-						placeholder="User"
+						placeholder="Username"
 						placeholderTextColor={"white"}
 						value={userName}
 						onChangeText={handleTextChange}
@@ -41,9 +46,9 @@ export const ForgotPasswordScreen = () => {
 				</View>
 
 				<View style={styles.inputView} >
-					<FontAwesome name="user" size={24} color="white" />
+					<MaterialCommunityIcons name="email" size={24} color="white" />
 					<TextInput
-						placeholder="User"
+						placeholder="Email"
 						placeholderTextColor={"white"}
 						value={userName}
 						onChangeText={handleTextChange}

@@ -5,20 +5,25 @@ import { StatusBar } from 'expo-status-bar';
 import Card from '../../components/card';
 import { AntDesign } from '@expo/vector-icons';
 import { ProgressBar } from 'react-native-paper';
-import { styles } from "./styles";
 import NextGym from "../../assets/images/proximoTreino.png"
 import Weight from "../../assets/images/gymWeight.png"
 import Spacer from '../../components/spacer';
 import { Foundation } from '@expo/vector-icons';
 import BottomNavigation from '../../components/bottomNavigation';
+import { UserMocked } from '../../mock/user';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../routes';
+import { useNavigation } from '@react-navigation/native';
+import { styles } from "./styles";
+
+type HomeScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
 
 
 export const Home = () => {
-	const percentage = 7 / 30 * 100
-	const daysInARow = 0
-	const handlePressButton = () => {
-		console.log("apertou")
-	}
+	const percentage = UserMocked.daysInaMonthTraining / 30 * 100
+	const daysInARow = UserMocked.daysInaRowTraining
+	const navigation = useNavigation<HomeScreenProp>();
+
 	return (
 		<View>
 			<ScrollView>
@@ -29,7 +34,7 @@ export const Home = () => {
 							boa tarde,
 						</Text>
 						<Text style={styles.name}>
-							Arthur
+							{UserMocked.name}
 						</Text>
 					</View>
 
@@ -64,7 +69,7 @@ export const Home = () => {
 										Sessões:
 									</Text>
 									<Text style={styles.progressNumbers}>
-										7/30
+										{`${UserMocked.daysInaMonthTraining}/30`}
 									</Text>
 								</View>
 							</View>
@@ -75,7 +80,7 @@ export const Home = () => {
 
 					<Card title='próximo treino' spacerHeight={28} paddingRight={31} paddingLeft={15} paddingBottom={35} paddingTop={7}>
 						<ImageBackground source={NextGym} imageStyle={styles.backgroundImage}>
-							<TouchableOpacity style={styles.imageWrapper} onPress={handlePressButton}>
+							<TouchableOpacity style={styles.imageWrapper} onPress={() => navigation.navigate('MyTraining')}>
 								<View style={styles.textWrapper}>
 									<View style={styles.weightView} >
 										<Image source={Weight} style={styles.weight} />

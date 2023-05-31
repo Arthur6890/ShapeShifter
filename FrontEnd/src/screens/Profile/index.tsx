@@ -10,6 +10,7 @@ import Spacer from '../../components/spacer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles'
+import { UserMocked } from '../../mock/user';
 
 type ProfileScreenProp = NativeStackNavigationProp<RootStackParamList, "Profile">;
 
@@ -27,13 +28,13 @@ export const Profile = () => {
 
 					<Spacer height={37} />
 
-					<Text style={styles.profileName}>Arthur</Text>
+					<Text style={styles.profileName}>{UserMocked.name} </Text>
 
 					<Spacer height={19} />
 
 					<Text style={styles.goalTitle}>Objetivo</Text>
 
-					<Text style={styles.goal}>Emagrecer</Text>
+					<Text style={styles.goal}>{UserMocked.goal} </Text>
 
 					<Spacer height={17} />
 

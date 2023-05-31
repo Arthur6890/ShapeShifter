@@ -5,16 +5,36 @@ import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../routes';
 import { Ionicons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
 import Spacer from '../../components/spacer';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { styles } from './styles'
 import TruncatedText from '../../components/truncatedText';
+import { TrainingFilesMocked } from '../../mock/user';
+import { useNavigation } from '@react-navigation/native';
+import { styles } from './styles'
+
 
 type MyTraningScreenProp = NativeStackNavigationProp<RootStackParamList, "MyTraining">;
+interface Exercise {
+	types: string;
+	exercise: string;
+	sets: number;
+	repetitions: number;
+	exerciseImage: string;
+}
 
 export const MyTraining = () => {
+	function extractTypes(objects: Exercise[]): string {
+		const typesArray = objects.map(obj => obj.types);
+		const typesString = typesArray.join(', ');
+		return typesString;
+	}
+
+	const navigation = useNavigation<MyTraningScreenProp>();
+
+	const goToTrainingFile = () => {
+		navigation.navigate("TrainingFiles", { exercise: TrainingFilesMocked[0].exercise, exerciseImage: TrainingFilesMocked[0].exerciseImage, repetitions: TrainingFilesMocked[0].repetitions, sets: TrainingFilesMocked[0].repetitions, types: TrainingFilesMocked[0].types })
+	}
+
+	const truncatedText = extractTypes(TrainingFilesMocked)
 	return (
 		<>
 			<SafeAreaView style={styles.wrapper}>
@@ -28,12 +48,12 @@ export const MyTraining = () => {
 				<Text style={styles.title}>
 					divisões de treino
 				</Text>
-				<View style={styles.ficha}>
+				<TouchableOpacity style={styles.ficha} onPress={goToTrainingFile}>
 					<Text style={styles.fichaName}>
 						A
 					</Text>
-					<TruncatedText text='Abdômen, Peitoral, Dorsal, Pernas' maxLength={30} style={styles.fichaExercicios} />
-				</View>
+					<TruncatedText text={truncatedText} maxLength={30} style={styles.fichaExercicios} />
+				</TouchableOpacity>
 			</SafeAreaView>
 			<BottomNavigation />
 		</>

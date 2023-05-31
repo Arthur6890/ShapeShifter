@@ -9,6 +9,7 @@ import { SignupScreen } from '../screens/Signup';
 import { ForgotPasswordScreen } from '../screens/forgotPassword';
 import { Profile } from '../screens/Profile';
 import { MyTraining } from '../screens/MyTraining';
+import { TrainingFiles } from '../screens/TrainingFiles';
 
 export type RootStackParamList = {
 	Home: undefined;
@@ -17,6 +18,13 @@ export type RootStackParamList = {
 	ForgotPassword: undefined
 	Profile: undefined
 	MyTraining: undefined
+	TrainingFiles: {
+		types: string,
+		exercise: string,
+		sets: number,
+		repetitions: number,
+		exerciseImage: string
+	}
 };
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +39,7 @@ export function Routes() {
 				<Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
 				<Stack.Screen name="Profile" component={Profile} />
 				<Stack.Screen name="MyTraining" component={MyTraining} />
+				<Stack.Screen name="TrainingFiles" component={TrainingFiles} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
