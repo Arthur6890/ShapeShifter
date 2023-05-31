@@ -25,8 +25,10 @@ export const Home = () => {
 	const percentage = user?.daysInaMonthTraining ? user.daysInaMonthTraining / 30 * 100 : 0
 	const daysInARow = user?.daysInaRowTraining || 0
 	const daysInaMonthTraining = user?.daysInaMonthTraining
+	const progressBarValue = user?.daysInaMonthTraining ? user.daysInaMonthTraining / 30 : 0
 	const navigation = useNavigation<HomeScreenProp>();
 	console.log(user)
+	console.log(progressBarValue, user?.daysInaMonthTraining)
 	return (
 		<View>
 			<ScrollView>
@@ -76,7 +78,7 @@ export const Home = () => {
 									</Text>
 								</View>
 							</View>
-							<ProgressBar progress={0.5} color={"#830289"} />
+							<ProgressBar progress={progressBarValue} color={"#830289"} />
 
 						</View>
 					</Card>

@@ -10,11 +10,13 @@ import Spacer from '../../components/spacer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { styles } from './styles'
-import { UserMocked } from '../../mock/user';
+import { useLogin } from '../../context/UserContext';
 
 type ProfileScreenProp = NativeStackNavigationProp<RootStackParamList, "Profile">;
 
 export const Profile = () => {
+	const { state } = useLogin()
+	const { user } = state
 	return (
 		<>
 			<SafeAreaView>
@@ -26,15 +28,15 @@ export const Profile = () => {
 						<Text style={styles.titleText} >perfil</Text>
 					</View>
 
-					<Spacer height={37} />
+					<Spacer height={17} />
 
-					<Text style={styles.profileName}>{UserMocked.name} </Text>
+					<Text style={styles.profileName}>{user?.name} </Text>
 
 					<Spacer height={19} />
 
 					<Text style={styles.goalTitle}>Objetivo</Text>
 
-					<Text style={styles.goal}>{UserMocked.goal} </Text>
+					<Text style={styles.goal}>{user?.goal} </Text>
 
 					<Spacer height={17} />
 

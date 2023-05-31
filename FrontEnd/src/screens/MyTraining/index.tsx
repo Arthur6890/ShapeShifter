@@ -44,14 +44,17 @@ export const MyTraining = () => {
 				</Text>
 				{
 					trainingSets?.map(trainingSet => (
-						<TouchableOpacity style={styles.ficha} onPress={() => goToTrainingFile(trainingSet)} key={trainingSet.type}>
-							<Text style={styles.fichaName}>
-								{trainingSet.name}
-							</Text>
-							<Text ellipsizeMode='tail' numberOfLines={1} style={styles.fichaExercicios} >
-								{extractTypes(trainingSet.trainingFiles)}
-							</Text>
-						</TouchableOpacity>
+						<>
+							<TouchableOpacity style={styles.ficha} onPress={() => goToTrainingFile(trainingSet)} key={trainingSet.type}>
+								<Text style={styles.fichaName}>
+									{trainingSet.name}
+								</Text>
+								<Text ellipsizeMode='tail' numberOfLines={1} style={styles.fichaExercicios} >
+									{extractTypes(trainingSet.trainingFiles)}
+								</Text>
+							</TouchableOpacity>
+							<Spacer height={20} />
+						</>
 					))
 				}
 
