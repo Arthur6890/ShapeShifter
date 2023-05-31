@@ -10,31 +10,25 @@ import TruncatedText from '../../components/truncatedText';
 import { TrainingFilesMocked } from '../../mock/user';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles'
+import { TrainingFile, TrainingSet, useLogin } from '../../context/UserContext';
 
 
 type MyTraningScreenProp = NativeStackNavigationProp<RootStackParamList, "MyTraining">;
-interface Exercise {
-	types: string;
-	exercise: string;
-	sets: number;
-	repetitions: number;
-	exerciseImage: string;
-}
 
 export const MyTraining = () => {
-	function extractTypes(objects: Exercise[]): string {
-		const typesArray = objects.map(obj => obj.types);
+	function extractTypes(objects: TrainingFile[]): string {
+		const typesArray = objects.map(obj => obj.type);
 		const typesString = typesArray.join(', ');
 		return typesString;
 	}
 
 	const navigation = useNavigation<MyTraningScreenProp>();
-
-	const goToTrainingFile = () => {
-		navigation.navigate("TrainingFiles", { exercise: TrainingFilesMocked[0].exercise, exerciseImage: TrainingFilesMocked[0].exerciseImage, repetitions: TrainingFilesMocked[0].repetitions, sets: TrainingFilesMocked[0].repetitions, types: TrainingFilesMocked[0].types })
+	const { state } = useLogin()
+	const trainingSets = state.user?.trainingSets
+	const goToTrainingFile = (trainingSet: TrainingSet) => {
+		navigation.navigate("TrainingFiles", { trainingSet })
 	}
 
-	const truncatedText = extractTypes(TrainingFilesMocked)
 	return (
 		<>
 			<SafeAreaView style={styles.wrapper}>
@@ -48,12 +42,19 @@ export const MyTraining = () => {
 				<Text style={styles.title}>
 					divisões de treino
 				</Text>
-				<TouchableOpacity style={styles.ficha} onPress={goToTrainingFile}>
-					<Text style={styles.fichaName}>
-						A
-					</Text>
-					<TruncatedText text={truncatedText} maxLength={30} style={styles.fichaExercicios} />
-				</TouchableOpacity>
+				{
+					trainingSets?.map(trainingSet => (
+						<TouchableOpacity style={styles.ficha} onPress={() => goToTrainingFile(trainingSet)} key={trainingSet.type}>
+							<Text style={styles.fichaName}>
+								{trainingSet.name}
+							</Text>
+							<Text ellipsizeMode='tail' numberOfLines={1} style={styles.fichaExercicios} >
+								{extractTypes(trainingSet.trainingFiles)}
+							</Text>
+						</TouchableOpacity>
+					))
+				}
+
 			</SafeAreaView>
 			<BottomNavigation />
 		</>

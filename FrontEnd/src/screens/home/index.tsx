@@ -15,15 +15,18 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../routes';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from "./styles";
+import { useLogin } from '../../context/UserContext';
 
 type HomeScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
 
-
 export const Home = () => {
-	const percentage = UserMocked.daysInaMonthTraining / 30 * 100
-	const daysInARow = UserMocked.daysInaRowTraining
+	const { state } = useLogin()
+	const { user } = state
+	const percentage = user?.daysInaMonthTraining ? user.daysInaMonthTraining / 30 * 100 : 0
+	const daysInARow = user?.daysInaRowTraining || 0
+	const daysInaMonthTraining = user?.daysInaMonthTraining
 	const navigation = useNavigation<HomeScreenProp>();
-
+	console.log(user)
 	return (
 		<View>
 			<ScrollView>
@@ -34,7 +37,7 @@ export const Home = () => {
 							boa tarde,
 						</Text>
 						<Text style={styles.name}>
-							{UserMocked.name}
+							{user?.name}
 						</Text>
 					</View>
 
@@ -69,7 +72,7 @@ export const Home = () => {
 										Sessões:
 									</Text>
 									<Text style={styles.progressNumbers}>
-										{`${UserMocked.daysInaMonthTraining}/30`}
+										{`${daysInaMonthTraining}/30`}
 									</Text>
 								</View>
 							</View>

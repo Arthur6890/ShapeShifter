@@ -1,52 +1,66 @@
-import React, { createContext, useState, ReactNode } from 'react';
-
-type TrainingFiles = {
-	type: string,
-	exercise: string,
-	sets: number,
-	repetitions: number,
-	exerciseImage: string
-
+import * as React from 'react'
+export interface TrainingFile {
+	type: string;
+	exercise: string;
+	sets: number;
+	repetitions: number;
+	exerciseImage: string;
+}
+export interface TrainingSet {
+	type: string;
+	name: string;
+	trainingFiles: TrainingFile[]
+}
+export interface User {
+	username: string;
+	password: string;
+	name: string;
+	email: string;
+	goal: string;
+	daysInaRowTraining: number;
+	daysInaMonthTraining: number;
+	trainingSets: TrainingSet[];
 }
 
-type UserData = {
-	userName: string,
-	email: string,
-	name: string,
-	goal: string,
-	daysInaRowTraining: number,
-	daysInaMonthTraining: number,
-	trainingFiles: TrainingFiles[]
-};
 
-type UserContextType = {
-	user: UserData | null;
-	handleLogin: (userData: UserData) => void;
-	handleLogout: () => void;
-};
+type Action = { type: 'login', payload: User | undefined } | { type: 'logout' }
+type Dispatch = (action: Action) => void
+type State = { user: User | undefined }
+type CountProviderProps = { children: React.ReactNode }
 
-export const UserContext = createContext<UserContextType | undefined>(undefined);
+const CountStateContext = React.createContext<
+	{ state: State; dispatch: Dispatch } | undefined
+>(undefined)
 
-type UserProviderProps = {
-	children: ReactNode;
-};
+function countReducer(state: State, action: Action) {
+	switch (action.type) {
+		case 'login': {
+			return { user: action.payload }
+		}
+		default: {
+			throw new Error(`Unhandled action type: ${action.type}`)
+		}
+	}
+}
 
-export const UserProvider = ({ children }: UserProviderProps) => {
-	const [user, setUser] = useState<UserData | null>(null);
+function LoginProvider({ children }: CountProviderProps) {
+	const [state, dispatch] = React.useReducer(countReducer, { user: undefined })
+	// NOTE: you might need to memoize this value
+	// Learn more in http://kcd.im/optimize-context
+	const value = { state, dispatch }
+	return (
+		<CountStateContext.Provider value={value}>
+			{children}
+		</CountStateContext.Provider>
+	)
+}
 
-	const handleLogin = (userData: UserData) => {
-		setUser(userData);
-	};
+function useLogin() {
+	const context = React.useContext(CountStateContext)
+	if (context === undefined) {
+		throw new Error('useLogin must be used within a CountProvider')
+	}
+	return context
+}
 
-	const handleLogout = () => {
-		setUser(null);
-	};
-
-	const contextValue: UserContextType = {
-		user,
-		handleLogin,
-		handleLogout,
-	};
-
-	return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
-};
+export { LoginProvider, useLogin }

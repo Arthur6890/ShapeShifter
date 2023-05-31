@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native"
 
 export const styles = StyleSheet.create({
 	wrapper: {
+		flex: 1,
 		padding: 20,
 	},
 	titlePage: {
@@ -25,6 +26,8 @@ export const styles = StyleSheet.create({
 		marginBottom: 27
 	},
 	ficha: {
+		flex: 1,
+		maxHeight: 100,
 		paddingVertical: 20,
 		paddingHorizontal: 12,
 		backgroundColor: "#c7c7c7",
@@ -41,6 +44,7 @@ export const styles = StyleSheet.create({
 		color: "#830289"
 	},
 	fichaExercicios: {
+		flex: 1,
 		fontWeight: "700",
 		fontSize: 22,
 		lineHeight: 28,

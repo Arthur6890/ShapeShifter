@@ -17,35 +17,42 @@ type Props = {
 	navigation: TrainingFilesScreenNavigationProp;
 	route: TrainingFilesScreenProp;
 }
+
 export const TrainingFiles = ({ route }: Props) => {
-	const { types, exercise, repetitions, sets, exerciseImage } = route.params;
+	const { trainingSet } = route.params;
+	const { name, type, trainingFiles } = trainingSet
 	const navigation = useNavigation<TrainingFilesScreenNavigationProp>();
-	console.log(route.params)
+
 	return (
 		<SafeAreaView>
 			<View style={styles.titlePage}>
 				<TouchableOpacity onPress={() => navigation.navigate("MyTraining")}>
 					<Ionicons name="arrow-back-outline" size={34} color="#830289" />
 				</TouchableOpacity>
-				<Text style={styles.titlePageText} > Ficha A</Text>
+				<Text style={styles.titlePageText} >{`Ficha ${name}`} </Text>
 			</View>
 			<Spacer height={20} />
-			<View style={styles.exerciseView}>
-				<Image source={{ uri: exerciseImage }} style={styles.image} />
-				<View style={styles.exerciseNameView}>
-					<Text style={styles.exerciseName}>
-						{exercise}
-					</Text>
-					<View style={styles.setsCss}>
-						<Text style={styles.setsName}>
-							{`${sets}x`}
-						</Text>
-						<Text style={styles.setsName}>
-							{repetitions}
-						</Text>
+			{
+				trainingFiles.map(trainingFiles => (
+					<View style={styles.exerciseView} key={trainingFiles.type}>
+						<Image source={{ uri: trainingFiles.exerciseImage }} style={styles.image} />
+						<View style={styles.exerciseNameView}>
+							<Text style={styles.exerciseName}>
+								{trainingFiles.exercise}
+							</Text>
+							<View style={styles.setsCss}>
+								<Text style={styles.setsName}>
+									{`${trainingFiles.sets}x`}
+								</Text>
+								<Text style={styles.setsName}>
+									{trainingFiles.repetitions}
+								</Text>
+							</View>
+						</View>
 					</View>
-				</View>
-			</View>
+				))
+			}
+
 		</SafeAreaView>
 	)
 }

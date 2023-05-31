@@ -7,13 +7,15 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../src/routes";
 import { MaterialIcons } from '@expo/vector-icons';
-import { UserContext } from '../../context/UserContext';
+import { User, useLogin } from '../../context/UserContext';
 import { styles } from "./styles";
+import { UserMocked } from '../../mock/user';
 
 type loginScreenProp = NativeStackNavigationProp<RootStackParamList, "Login">;
 
 export const LoginScreen = () => {
 	const navigation = useNavigation<loginScreenProp>();
+	const { dispatch } = useLogin()
 
 	const [userName, setUserName] = useState('');
 	const [password, setPassword] = useState('');
@@ -26,9 +28,21 @@ export const LoginScreen = () => {
 		setPassword(inputText);
 	};
 
-	// const { handleLogin } = useContext(UserContext);
-	const handleLogin = () => {
-		navigation.navigate('Home')
+	const handleLogin = async () => {
+		try {
+			console.log(`${userName}${password}`)
+			const response = await fetch(`http://192.168.0.30:3000/user/login/`, {
+				method: "POST", body: JSON.stringify({ userName, password }), headers: {
+					"Content-Type": "application/json",
+				},
+			})
+			const user: User = await response.json()
+			// const user = UserMocked
+			dispatch({ type: "login", payload: user })
+			navigation.navigate('Home')
+		} catch (e) {
+			console.log("Erro!", e)
+		}
 	};
 
 	return (

@@ -1,7 +1,6 @@
-import { IUser } from "../interfaces/IUser";  
+import { IUser } from "../Interfaces/IUser";
 
 export interface IUserService {
-    save(user: IUser): Promise<void>;
-    findByEmail(email: string): Promise<IUser | null>;
-    findById(id: string): Promise<IUser | null>;
+	login(password: string, userName: string)
+	createUserCollection(user: IUser): Promise<IUser>;
 }

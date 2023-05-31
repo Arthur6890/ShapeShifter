@@ -1,6 +1,7 @@
 import { uri, dbName, MongoClient as Mongo } from './MongoDBConnection';
+import { IUser } from '../../Interfaces/IUser';
 
-async function createUserCollection() {
+export async function createUserCollection(user:IUser) {
   const client = new Mongo(uri);
 
   try {
@@ -15,19 +16,6 @@ async function createUserCollection() {
 
     console.log('Coleção "users" criada com sucesso!');
 
-    // Exemplo de documento de usuário
-    const user = {
-      userName: 'john123',
-      password: 'senha123',
-      email: 'john@example.com',
-      passwordTip: 'Dica de senha',
-      name: 'John Doe',
-      goal: 'Perder peso',
-      daysInaRowTraining: 7,
-      daysInaMonthTraining: 20,
-      trainingFiles: []
-    };
-
     // Inserir o documento do usuário na coleção
     await usersCollection.insertOne(user);
 
@@ -39,4 +27,35 @@ async function createUserCollection() {
   }
 }
 
-createUserCollection();
+export async function getUserCollection(userName: string, password: string) {
+  const client = new Mongo(uri);
+
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+
+    console.log("pegou o banco");
+    const usersCollection = db.collection('users');
+
+    console.log("pegou a collection");
+
+    const user = await usersCollection.findOne({ userName: userName, password: password });
+
+    
+
+    if (user) {
+      console.log("encontrou o usuario");
+      return user;
+    } else {
+      return null;
+    }
+  } catch (err) {
+    console.error('Erro ao buscar usuário:', err);
+    throw err;
+  } finally {
+    client.close();
+  }
+}
+
+
+// createUserCollection();

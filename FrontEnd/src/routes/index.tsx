@@ -10,6 +10,7 @@ import { ForgotPasswordScreen } from '../screens/forgotPassword';
 import { Profile } from '../screens/Profile';
 import { MyTraining } from '../screens/MyTraining';
 import { TrainingFiles } from '../screens/TrainingFiles';
+import { TrainingSet } from '../context/UserContext';
 
 export type RootStackParamList = {
 	Home: undefined;
@@ -19,11 +20,7 @@ export type RootStackParamList = {
 	Profile: undefined
 	MyTraining: undefined
 	TrainingFiles: {
-		types: string,
-		exercise: string,
-		sets: number,
-		repetitions: number,
-		exerciseImage: string
+		trainingSet: TrainingSet
 	}
 };
 
