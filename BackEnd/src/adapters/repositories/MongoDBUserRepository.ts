@@ -34,14 +34,9 @@ export async function getUserCollection(userName: string, password: string) {
     await client.connect();
     const db = client.db(dbName);
 
-    console.log("pegou o banco");
     const usersCollection = db.collection('users');
 
-    console.log("pegou a collection");
-
     const user = await usersCollection.findOne({ userName: userName, password: password });
-
-    
 
     if (user) {
       console.log("encontrou o usuario");

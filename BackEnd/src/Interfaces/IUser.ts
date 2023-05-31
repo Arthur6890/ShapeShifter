@@ -1,3 +1,5 @@
+import { ITrainingSet } from "./ITraningSet";
+
 export interface IUser {
 	id: string;
 	userName: string;
@@ -7,5 +9,5 @@ export interface IUser {
 	goal: string;
 	daysInaRowTraining: number;
 	daysInaMonthTraining: number;
-	trainingFiles: Array<any>
+	trainingSets: ITrainingSet[]
 };
