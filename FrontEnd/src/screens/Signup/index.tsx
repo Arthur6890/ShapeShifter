@@ -34,8 +34,17 @@ export const SignupScreen = () => {
 		setTip(inputText);
 	};
 
-	const handleLogin = () => {
-		navigation.navigate('Login')
+	const handleSignup = async () => {
+		try {
+			const response = await fetch(`http://192.168.0.30:3000/user/create`, {
+				method: "POST", body: JSON.stringify({ userName, password, email, tip }), headers: {
+					"Content-Type": "application/json",
+				},
+			})
+			console.log("Usuário criado com sucesso!")
+		} catch (e) {
+			console.log("Erro!", e)
+		}
 	};
 	return (
 		<LinearGradient colors={["#5D345E", "#7B5C7C"]} style={styles.container}>
@@ -58,7 +67,7 @@ export const SignupScreen = () => {
 					<TextInput
 						placeholder="E-Mail"
 						placeholderTextColor={"white"}
-						value={userName}
+						value={email}
 						onChangeText={handleEmailChange}
 						style={styles.input}
 					/>
@@ -69,7 +78,7 @@ export const SignupScreen = () => {
 					<TextInput
 						placeholder="Senha"
 						placeholderTextColor={"white"}
-						value={userName}
+						value={password}
 						onChangeText={handlePasswordChange}
 						style={styles.input}
 					/>
@@ -80,7 +89,7 @@ export const SignupScreen = () => {
 					<TextInput
 						placeholder="Dica de senha"
 						placeholderTextColor={"white"}
-						value={userName}
+						value={tip}
 						onChangeText={handleTipChange}
 						style={styles.input}
 					/>
@@ -90,7 +99,7 @@ export const SignupScreen = () => {
 			</View>
 			<TouchableOpacity
 				activeOpacity={0.7}
-				onPress={handleLogin}
+				onPress={handleSignup}
 				style={styles.button}
 			>
 				<Text style={styles.buttonText}>criar</Text>
