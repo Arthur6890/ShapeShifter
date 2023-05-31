@@ -30,7 +30,6 @@ export const LoginScreen = () => {
 
 	const handleLogin = async () => {
 		try {
-			console.log(`${userName}${password}`)
 			const response = await fetch(`http://192.168.0.30:3000/user/login/`, {
 				method: "POST", body: JSON.stringify({ userName, password }), headers: {
 					"Content-Type": "application/json",
