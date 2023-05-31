@@ -157,3 +157,14 @@ exercícios concluídos durante o treino. (Arthur)
 
 -Banco de Dados: criar e gerenciar o banco de dados que armazena as informações
 dos exercícios concluídos durante o treino. (Lucas)
+
+## Arquitetura Hexagonal
+
+-Domínio: Esta é a camada central da aplicação. Ela contém a lógica de negócios e as entidades do domínio Usuário, Treino, Exercício(Ficha), etc. A lógica de negócios seria as regras e operações que podem ser realizadas nessas entidades.
+No caso do nosso projeto, no backend criamos a pasta Services, nela implementamos a Interface e as Entidades de usuário e Ficha de Treino, e aplicamos nelas as regras de negócio
+
+-Ports: Nossos ports são usados para levar dados para fora da lógica de negócios (como no exemplo, uma interface de repositório de usuário que tem métodos para salvar um usuário, buscar um usuário, etc.). Por essa lógica, eles são considerados Driven Ports
+
+-Adapters: Os adapters são a implementação dos ports. Utilizamos no projeto os Driven adapters, que implementam os nossos "driven ports" para levar dados para fora da lógica de negócios (No nosso exemplo, fizemos uma implementação de repositório de user e de TrainingFiles que usa MongoDB para salvar e buscar usuários e suas fichas de treino).
+
+-Infraestrutura: Esta é a camada externa da nossa aplicação. Ela contém todas as tecnologias externas que a aplicação usa, como banco de dados, web framework, etc. No caso do nosso projeto, nossa infraestrutura seria o MongoDB, o Node.js e o React Native.
