@@ -53,4 +53,3 @@ export async function getUserCollection(userName: string, password: string) {
 }
 
 
-// createUserCollection();
