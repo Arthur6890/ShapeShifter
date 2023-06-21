@@ -4,7 +4,7 @@
   "description": "this is the backend of our project \"Shapeshifter\" presented in the discipline of Practices in Software Development at the Federal University of Minas Gerais",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc",
     "start": "ts-node ./index.ts"
   },
@@ -50,7 +50,6 @@
       "text",
       "clover"
     ],
-    
     "coverageDirectory": "coverage"
   }
 }
