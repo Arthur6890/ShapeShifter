@@ -1,0 +1,13 @@
+{
+  "name": "shapeshifter",
+  "version": "1.0.0",
+  "description": "_Projeto usado na disciplina de Praticas em desenvolvimento de software_.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
