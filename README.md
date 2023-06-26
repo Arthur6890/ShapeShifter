@@ -158,6 +158,7 @@ exercícios concluídos durante o treino. (Arthur)
 -Banco de Dados: criar e gerenciar o banco de dados que armazena as informações
 dos exercícios concluídos durante o treino. (Lucas)
 
+
 ## Arquitetura Hexagonal
 
 -Domínio: Esta é a camada central da aplicação. Ela contém a lógica de negócios e as entidades do domínio Usuário, Treino, Exercício(Ficha), etc. A lógica de negócios seria as regras e operações que podem ser realizadas nessas entidades.
