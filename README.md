@@ -17,7 +17,7 @@ Entre outras funcionalidades
 
 ## Autores
 
-[![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Arthur Ramos - Front End](https://github.com/arthur6890)
+[![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) Arthur Ramos - Dev Fullstack](https://github.com/arthur6890)
 
 [![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) João Victor Valgas - Back End](https://github.com/joaovalgas)
 
