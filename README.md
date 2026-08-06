@@ -1,7 +1,5 @@
 # Escopo e objetivo
 
-_Projeto usado na disciplina de Praticas em desenvolvimento de software_.
-
 _Projeto com objetivo de ajudar o usuário a acompanhar a sua rotina de treinos na academia_.
 
 Este é um aplicativo feito em React Native, Node.js, utilizando Typescript, e Mongo DB para banco de dados.
